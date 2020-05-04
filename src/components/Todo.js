@@ -5,6 +5,7 @@ const Todo = props => {
   const toggler = () => {
     return {
       textDecoration: props.task.completed ? 'line-through' : 'none',
+      color: props.task.completed ? 'slategrey' : 'black',
     }
   }
 

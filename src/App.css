@@ -1,13 +1,40 @@
+body {
+  font-family: 'Roboto';
+}
+
 .todo-app {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto;
+  padding: 2rem 0;
+  border: 5px solid royalblue;
+  border-radius: 10px;
+  width: 60%;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: .1rem auto;
+  color: royalblue;
+}
+
+h2 {
+  margin: .5rem auto;
+}
+
+.date {
+  font-size: 2rem;
+}
+
+.todo-title {
+  font-size: 2rem;
 }
 
 .todo-list {
   text-align: center;
+  margin: 1.5rem 0;
 }
 
 .todo-item {
@@ -24,14 +51,15 @@
 }
 
 .todo-form input{
-  border: 1px solid #000000;
+  border: 1px solid lightgrey;
   border-radius: 5px;
   padding: .5rem 1rem;
+  color: grey;
 }
 
 .add {
   border: none;
-  background-color: rgb(186, 186, 186);
+  background-color: lightgrey;
   border-radius: 5px;
   padding: .3rem 1rem;
   margin: .5rem auto;
@@ -40,18 +68,21 @@
 
 .add:hover {
   cursor: pointer;
-  background-color: lightgrey;
+  background-color: slategrey;
 }
 
 .clear {
-  border: none;
-  background-color: rgb(186, 186, 186);
+  border: 1px solid lightgrey;
+  background: none;
   border-radius: 5px;
   padding: .3rem 1rem;
   width: 100%;
+  color: grey;
 }
 
 .clear:hover {
   cursor: pointer;
-  background-color: lightgrey;
+  color: black;
+  border: 1px solid slategrey;
+  background-color: slategrey;
 }

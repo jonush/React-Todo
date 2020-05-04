@@ -1,19 +1,26 @@
 import React from 'react';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
+import './App.css';
 
 const tasks = [
   {
     task: 'React-Todo Project',
-    id: 1209324,
+    id: 1581269332200,
     completed: false,
   },
   {
     task: 'Standup Meeting',
-    id: 1395730,
+    id: 1588623432200,
     completed: false,
   },
 ]
+
+let date = new Date();
+const dd = String(date.getDate()).padStart(2, '0');
+const mm = String(date.getMonth() + 1).padStart(2, '0');
+const yyyy = date.getFullYear();
+date = mm + '/' + dd + '/' + yyyy;
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -22,7 +29,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      tasks
+      tasks: tasks
     }
   };
 
@@ -38,25 +45,40 @@ class App extends React.Component {
   };
 
   toggleTask = toggle => {
-    
+    console.log(toggle)
+    this.setState({
+      tasks: this.state.tasks.map(task => {
+        if(toggle === task.id) {
+          return {
+            ...task,
+            completed: !task.completed,
+          }
+        };
+        return task;
+      })
+    })
   };
 
-  clearTasks = () => {
-
+  clearCompleted = e => {
+    e.preventDefault();
+    this.setState({
+      tasks: this.state.tasks.filter(task => !task.completed)
+    })
   };
 
   render() {
     return (
-      <div>
-        <h1>Welcome to your Todo App!</h1>
-
-        <TodoForm addTask={this.addTask} />
+      <div className='todo-app'>
+        <h1>To Do App</h1>
+        <h2>{date}</h2>
 
         <TodoList
           tasks={this.state.tasks}
-          toggleTask={this.toggleTasks}
-          clearTasks={this.clearTasks}
+          toggleTask={this.toggleTask}
+          clearCompleted={this.clearCompleted}
         />
+
+        <TodoForm addTask={this.addTask} />
       </div>
     );
   };

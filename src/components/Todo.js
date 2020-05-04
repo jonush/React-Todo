@@ -1,9 +1,25 @@
 import React from 'react';
+import './Todo.css';
 
 const Todo = props => {
+  const toggler = () => {
+    return {
+      textDecoration: props.task.completed ? 'line-through' : 'none',
+    }
+  }
+
+  const onClickHandler = () => {
+    props.toggleTask(props.task.id);
+    console.log('Clicked');
+  }
+
   return (
-    <div>
-      <h2>{props.task.task}</h2>
+    <div className='todo-item'>
+      <h2
+        className='task'
+        style={toggler()}
+        onClick={onClickHandler}
+      >{props.task.task}</h2>
     </div>
   )
 }

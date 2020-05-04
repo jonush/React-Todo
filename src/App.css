@@ -1,0 +1,57 @@
+.todo-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.todo-list {
+  text-align: center;
+}
+
+.todo-item {
+  border-top: 1px solid #000000;
+  padding: 0 .5rem;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.todo-form input{
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding: .5rem 1rem;
+}
+
+.add {
+  border: none;
+  background-color: rgb(186, 186, 186);
+  border-radius: 5px;
+  padding: .3rem 1rem;
+  margin: .5rem auto;
+  width: 100%;
+}
+
+.add:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}
+
+.clear {
+  border: none;
+  background-color: rgb(186, 186, 186);
+  border-radius: 5px;
+  padding: .3rem 1rem;
+  width: 100%;
+}
+
+.clear:hover {
+  cursor: pointer;
+  background-color: lightgrey;
+}

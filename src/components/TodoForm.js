@@ -13,6 +13,8 @@ class ToDoForm extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     })
+
+    localStorage.setItem(e.target.name, e.target.value);
   };
 
   submitForm = e => {

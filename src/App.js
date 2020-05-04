@@ -42,6 +42,11 @@ class App extends React.Component {
     this.setState({
       tasks: [...this.state.tasks, newTask]
     });
+
+    const taskList = [...this.state.tasks];
+    taskList.push(newTask);
+    localStorage.setItem('taskList', JSON.stringify(taskList));
+    localStorage.setItem('newTask', '');
   };
 
   toggleTask = toggle => {
@@ -66,11 +71,40 @@ class App extends React.Component {
     })
   };
 
+  persistMethod = e => {
+    for(let key in this.state) {
+      if(localStorage.hasOwnProperty(key)) {
+        let value = localStorage.getItem(key);
+        try {
+          value = JSON.parse(value);
+          this.setState({ [key]: value });
+        } catch(e) {
+          this.setState({ [key]: value })
+        }
+      }
+    }
+  }
+
+  componentDidMount() {
+    this.persistMethod();
+    window.addEventListener(
+      'beforeunload',
+      this.saveStateToLocalStorage.bind(this)
+    );
+  }
+
+  saveStateToLocalStorage() {
+    for (let key in  this.state) {
+      localStorage.setItem(key, JSON.stringify(this.state[key]));
+    }
+  }
+
   render() {
     return (
       <div className='todo-app'>
         <h1>To Do App</h1>
         <h2 className='date'>{date}</h2>
+        <h2 className='todo-title' >Tasks</h2>
 
         <TodoList
           tasks={this.state.tasks}

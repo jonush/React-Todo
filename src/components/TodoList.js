@@ -5,7 +5,7 @@ import '../App.css';
 const TodoList = props => {
   return (
     <div className='todo-list'>
-      <h2 className='todo-title' >Tasks</h2> 
+ 
       
       {props.tasks.map(task => (
         <Todo

@@ -17,10 +17,10 @@ const tasks = [
 ]
 
 let date = new Date();
+const month = date.toLocaleString('default', { month: 'long' });
 const dd = String(date.getDate()).padStart(2, '0');
-const mm = String(date.getMonth() + 1).padStart(2, '0');
 const yyyy = date.getFullYear();
-date = mm + '/' + dd + '/' + yyyy;
+date = month + ' ' + dd + ', ' + yyyy;
 
 class App extends React.Component {
   // you will need a place to store your state in this component.

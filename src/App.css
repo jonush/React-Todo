@@ -1,0 +1,102 @@
+body {
+  font-family: 'Roboto';
+  background-color: #d9e9ea;
+}
+
+.todo-app {
+  /* border-radius: 5px;
+  border: 10px solid royalblue; */
+  padding: 3rem 2rem;
+  position: fixed;
+  width: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  background: #d9e9ea;
+  box-shadow:  20px 20px 60px #b8c6c7, 
+             -20px -20px 60px #faffff;
+}
+
+h1 {
+  font-size: 2rem;
+  margin: .1rem auto;
+  color: royalblue;
+  text-align: left;
+}
+
+h2 {
+  margin: .5rem auto;
+}
+
+.date {
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.todo-title {
+  font-size: 2rem;
+  color: royalblue;
+  border-bottom: 2px solid black;
+  text-align: left;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.todo-item {
+  width: 100%;
+  border-bottom: 2px solid #c9d7d8;
+}
+
+.todo-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.todo-form input{
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: .6rem 0;
+  color: grey;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.add {
+  border: none;
+  background-color: royalblue;
+  border-radius: 5px;
+  padding: .6rem 1rem;
+  width: 100%;
+  margin-top: .5rem;
+  color: white;
+}
+
+.add:hover {
+  cursor: pointer;
+  background-color: slategrey;
+}
+
+.clear {
+  border: none;
+  background: none;
+  width: 40%;
+  color: grey;
+  text-align: left;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.clear:hover {
+  cursor: pointer;
+  color: royalblue;
+}

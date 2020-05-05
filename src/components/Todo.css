@@ -1,0 +1,11 @@
+.task {
+  font-size: 1.2rem;
+}
+
+.task:hover {
+  cursor: pointer;
+}
+
+.task::selection {
+  background: none;
+}
